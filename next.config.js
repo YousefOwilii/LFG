@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
+const repoName = 'LFG';
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -12,13 +13,14 @@ const nextConfig = {
     ],
   },
   output: 'export',
-  // For GitHub Pages deployment
-  basePath: '',
-  assetPrefix: '',
-  // Add trailingSlash to ensure proper routing with static export
+
+  // ✅ Corrected for GitHub Pages
+  basePath: `/${repoName}`,
+  assetPrefix: `/${repoName}/`,
+
   trailingSlash: true,
-  // Ignore the pages.bak directory
+
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'].filter(ext => !ext.includes('bak')),
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;
