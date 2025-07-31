@@ -12,9 +12,9 @@ const nextConfig = {
     ],
   },
   output: 'export',
-  // For username.github.io repositories, both basePath and assetPrefix should be empty strings
-  basePath: '',
-  assetPrefix: '',
+  // For GitHub Pages with repository name in URL
+  basePath: '/LFG',
+  assetPrefix: '/LFG',
   // Add trailingSlash to ensure proper routing with static export
   trailingSlash: true,
   // Ignore the pages.bak directory
