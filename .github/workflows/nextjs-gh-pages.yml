@@ -9,6 +9,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write
 
 concurrency:
   group: "pages"
@@ -32,7 +33,6 @@ jobs:
       - name: Prepare static files
         run: |
           touch out/.nojekyll
-          cp CNAME out/
           cp public/404.html out/
           cp public/spa-redirect.js out/
           # Create a copy of 404.html at the root for GitHub Pages

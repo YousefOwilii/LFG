@@ -19,8 +19,6 @@ const nextConfig = {
   trailingSlash: true,
   // Ignore the pages.bak directory
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'].filter(ext => !ext.includes('bak')),
-  // Ensure 404 page is generated correctly
-  distDir: 'out',
 };
 
 module.exports = nextConfig; 
