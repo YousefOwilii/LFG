@@ -12,13 +12,15 @@ const nextConfig = {
     ],
   },
   output: 'export',
-  // For GitHub Pages deployment - using empty strings for root deployment
+  // For GitHub Pages deployment
   basePath: '',
   assetPrefix: '',
   // Add trailingSlash to ensure proper routing with static export
   trailingSlash: true,
   // Ignore the pages.bak directory
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'].filter(ext => !ext.includes('bak')),
+  // Ensure 404 page is generated correctly
+  distDir: 'out',
 };
 
 module.exports = nextConfig; 
