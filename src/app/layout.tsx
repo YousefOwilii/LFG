@@ -1,0 +1,40 @@
+import type { Metadata } from "next";
+import { Inter, Roboto_Mono } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+const robotoMono = Roboto_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "LFG.tech | AI Automation Agency",
+  description: "Free up time, reduce cost, and scale faster with our AI automation solutions for forward-thinking businesses.",
+  keywords: ["AI automation", "business automation", "AI solutions", "workflow automation", "customer support AI", "data processing"],
+  authors: [{ name: "LFG.tech" }],
+  creator: "LFG.tech",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
+      </head>
+      <body
+        className={`${inter.variable} ${robotoMono.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
