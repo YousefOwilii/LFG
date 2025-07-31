@@ -29,8 +29,11 @@ jobs:
         run: npm ci
       - name: Build with Next.js
         run: npm run build
-      - name: Export static files
-        run: npm run export || echo "Export already included in build"
+      - name: Prepare static files
+        run: |
+          touch out/.nojekyll
+          cp public/404.html out/
+          cp public/spa-redirect.js out/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

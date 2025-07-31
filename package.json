@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export",
+    "build-gh": "next build && touch out/.nojekyll && cp public/404.html out/ && cp public/spa-redirect.js out/"
   },
   "dependencies": {
     "@babel/runtime": "^7.28.2",

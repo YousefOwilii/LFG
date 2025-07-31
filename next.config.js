@@ -12,9 +12,9 @@ const nextConfig = {
     ],
   },
   output: 'export',
-  // For GitHub Pages with repository name in URL
-  basePath: '/LFG',
-  assetPrefix: '/LFG',
+  // For GitHub Pages deployment - using empty strings for root deployment
+  basePath: '',
+  assetPrefix: '',
   // Add trailingSlash to ensure proper routing with static export
   trailingSlash: true,
   // Ignore the pages.bak directory

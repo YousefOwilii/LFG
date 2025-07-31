@@ -6,26 +6,37 @@
   <title>Page Not Found</title>
   <script>
     // Single Page Apps for GitHub Pages
-    // MIT License
-    // This script takes the current URL and converts the path to a query parameter
-    // so that the main index.html page can redirect to the appropriate page
-    (function() {
-      var segmentCount = 1; // For domain/LFG/path
-      var l = window.location;
-      var repo = '/LFG';
-      
-      // Extract the path after the repository name
-      var path = l.pathname.split('/').slice(segmentCount + 1).join('/');
-      
-      // Redirect to the index with the path as a query parameter
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        repo + '/?p=/' + path + 
-        (l.search ? '&q=' + l.search.slice(1) : '') +
-        l.hash
-      );
-    })();
+    // https://github.com/rafgraph/spa-github-pages
+    // This script takes the current url and converts the path and query
+    // string into just a query string, and then redirects the browser
+    // to the new url with only a query string and hash fragment
+    
+    // This is a reliable solution for Next.js apps on GitHub Pages
+    var pathSegmentsToKeep = 0; // Change to 1 if using a repo name in the path
+
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
   </script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+    }
+    h1 { margin-bottom: 10px; }
+  </style>
 </head>
 <body>
   <h1>Page Not Found</h1>

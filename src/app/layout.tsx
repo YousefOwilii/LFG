@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
-        <Script src="/redirect-script.js" strategy="beforeInteractive" />
+        <Script src="/spa-redirect.js" strategy="beforeInteractive" />
       </head>
       <body
         className={`${inter.variable} ${robotoMono.variable} antialiased`}
