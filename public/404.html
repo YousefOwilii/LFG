@@ -12,11 +12,9 @@
     // to the new url with only a query string and hash fragment
     
     // This is a reliable solution for Next.js apps on GitHub Pages
-    var pathSegmentsToKeep = 0; // Change to 1 if using a repo name in the path
+    var pathSegmentsToKeep = 1; // Change to 1 for repo name in path (e.g., /LFG/)
 
     var l = window.location;
-    var segmentCount = l.pathname.split('/').length;
-    var isDirectoryPath = l.pathname.endsWith('/');
     
     // Only redirect if we're not already at the root
     if (l.pathname !== '/' && l.pathname !== '/index.html') {
@@ -27,9 +25,6 @@
         (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
       );
-    } else {
-      // If we're already at the root, just redirect to index
-      l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/');
     }
   </script>
   <style>
@@ -43,6 +38,8 @@
       align-items: center;
       justify-content: center;
       height: 90vh;
+      background-color: #000;
+      color: #fff;
     }
     h1 { margin-bottom: 10px; }
   </style>

@@ -14,7 +14,7 @@ const nextConfig = {
   },
   output: 'export',
 
-  // ✅ Corrected for GitHub Pages
+  // GitHub Pages configuration
   basePath: `/${repoName}`,
   assetPrefix: `/${repoName}/`,
 
