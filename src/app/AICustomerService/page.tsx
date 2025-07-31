@@ -339,7 +339,7 @@ export default function AICustomerService() {
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <button onClick={() => {
-                window.location.href = 'https://www.yousefowili.me/#contact';
+                window.location.href = '/#contact';
               }} className="bg-white text-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-lg sm:text-xl hover:bg-gray-200 transition-colors duration-300 w-full sm:w-auto">
                 Okay, I want to know more.
               </button>

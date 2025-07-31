@@ -34,7 +34,6 @@ jobs:
         run: |
           touch out/.nojekyll
           cp public/404.html out/
-          cp public/spa-redirect.js out/
           # Create a copy of 404.html at the root for GitHub Pages
           cp out/404.html out/404/index.html
       - name: Upload artifact

@@ -12,7 +12,7 @@ const projects = [
     title: "This website",
     description: "This personal project showcases my skills in modern web development. Built with Next.js, TypeScript, and Tailwind CSS, it features a responsive design, dark mode, and interactive elements like the typewriter effect.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
-    projectUrl: "https://yousefowili.me",
+    projectUrl: "https://github.com/yourusername/portfolio",
     companyName: "Personal Project",
     imageUrl: "/images/projects/portfolio.jpg",
     companyLogo: "/images/projects/personal-logo.png",
